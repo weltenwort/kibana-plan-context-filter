@@ -1,0 +1,1 @@
+# kibana-context-filter
