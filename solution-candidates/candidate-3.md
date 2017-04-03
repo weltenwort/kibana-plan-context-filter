@@ -1,5 +1,4 @@
-# Solution 3: Create a filter based on fields selected by the user after 
-switching
+# Solution 3: Create a filter based on fields selected by the user after switching
 
 ## Outline
 

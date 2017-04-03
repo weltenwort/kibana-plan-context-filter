@@ -1,5 +1,4 @@
-# Solution 2: Create a filter based on a field selected by the user when 
-switching
+# Solution 2: Create a filter based on a field selected by the user when switching
 
 ## Outline
 1. The user creates a set of filters and a query to identify the anchor event.
