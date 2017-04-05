@@ -2,8 +2,8 @@
 
 ## Outline
 
-1. The user configures sets of filters for the index pattern that defined
-   contexts.
+1. The user configures sets of filters for the index pattern/saved search that
+   defined contexts.
 2. The user creates a set of filters and a query to identify the anchor event.
 3. The user clicks the UI element to switch to the context view with a specific
    preconfigured set of filters.
@@ -15,6 +15,13 @@
 * **PRO**: The context is immediately "useful".
 * **CON**: The concept of sets of filters that can be preconfigured is new to
   Kibana and would require significant design and implementation effort.
+
+This solution essentially adds a very limited version of parameterized links to
+other saved searches. An implementation could lay the foundation for more
+generic capabilities of linking to other parts of Kibana from the doc table
+(which is a frequently mentioned requirement). This also shows some relation to
+elastic/kibana#10761 (being able to define parameterized outgoing links to
+other webapps).
 
 ## Variations
 
@@ -73,13 +80,6 @@ therefore be a combination of these.
 * **CON**: Extends the semantics of the "saved search" concept and might therefore
   limit degrees of freedom for future changes to saved searches.
 * **CON**: More complex "saved search" concept harder for user to understand.
-
-This solution essentially adds a very limited version of parameterized links to
-other saved searches. An implementation could lay the foundation for more
-generic capabilities of linking to other parts of Kibana from the doc table
-(which is a frequently mentioned requirement). This also shows some relation to
-elastic/kibana#10761 (being able to define parameterized outgoing links to
-other webapps).
 
 ### Variation C1: One-to-One Association of Index Pattern/Saved Search and Filter Set
 
