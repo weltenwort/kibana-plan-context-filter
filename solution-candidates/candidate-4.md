@@ -63,7 +63,7 @@ therefore be a combination of these.
 * **CON**: Configuring complex options for saved searches is not an established
   pattern.
 
-### Variation D3: Saved Searches as Filter Set Definitions
+### Variation D3: Implicit Filter Set Definitions from Saved Searches
 
 * The user can choose any of the saved searches to apply as a filter set to the
   context view.
@@ -80,6 +80,49 @@ therefore be a combination of these.
 * **CON**: Extends the semantics of the "saved search" concept and might therefore
   limit degrees of freedom for future changes to saved searches.
 * **CON**: More complex "saved search" concept harder for user to understand.
+
+### Variation D4: Implicit Filter Set Definitions via Configurable Document Actions per Index Pattern
+
+* The index pattern configuration contains an interface to define document 
+  actions.
+* One of the available action types is "Link to Filtered Context View".
+* When adding an action of that type, the user defines which filters to apply 
+  to the target context view.
+
+#### Discussion
+
+* **PRO**: It is easy to ensure that the filter definitions make sense for the
+  given index pattern.
+* **PRO**: Configuring complex options for index patterns is an established 
+  pattern.
+* **PRO**: The ability to configure the available actions for documents is 
+  applicable to other use-cases as well (direct linking to visualizations, 
+  drill-down based on document values).
+* **CON**: The index pattern configuration becomes more bloated.
+* **CON**: The index pattern model must be extended.
+* **CON**: The removal of index patterns is under consideration.
+* **CON**: The filter set definitions can not be re-used across index patterns.
+  pattern.
+
+### Variation D5: Implicit Filter Set Definitions via Configurable Document Actions per Saved Search
+
+* The saved search configuration contains an interface to define document 
+  actions.
+* One of the available action types is "Link to Filtered Context View".
+* When adding an action of that type, the user defines which filters to apply 
+  to the target context view.
+
+#### Discussion
+
+* **PRO**: It is easy to ensure that the filter definitions make sense for the
+  given saved search.
+* **PRO**: The ability to configure the available actions for documents is 
+  applicable to other use-cases as well (direct linking to visualizations, 
+  drill-down based on document values).
+* **CON**: The saved search model must be extended.
+* **CON**: The filter set definitions can not be re-used across saved searches.
+* **CON**: Configuring complex options for saved searches is not an established
+  pattern.
 
 ### Variation C1: One-to-One Association of Index Pattern/Saved Search and Filter Set
 
@@ -149,3 +192,60 @@ therefore be a combination of these.
 * Combination of D1, C2 and S2
 
 ![workflow-1](candidate-4-workflow-1.png)
+
+* **A**: The user visits the "Context Definitions" (preliminary term) tab in 
+  the index pattern settings.
+* **B**: The user clicks the "Add Context Definition" button.
+* **C**: The user enters a name in the "Edit New Context Definition" screen.
+* **D**: The user selects fields from the index pattern to add to the context 
+  definition.
+* **E**: The user views and modifies the list of fields in the context 
+  definition.
+* **F**: The user saves the context definition.
+* **G**: The user uses the filters and query bar to find relevant events in the 
+  Discover view.
+* **H**: The user expands a row, opens the dropdown that lists all context 
+  definitions of the current index pattern and clicks one of them.
+* **I**: The context view is filtered by term filters for the fields associated 
+  with the selected context definition using the values from the document 
+  expanded in step H.
+
+### Workflow 2
+
+* Combination of D4, C2 and S2
+
+![workflow-2](candidate-4-workflow-2.png)
+
+* **A**: The user visits the "Document Actions" (preliminary term) tab in 
+  the index pattern settings.
+* **B**: The user clicks the "Add Document Action" button.
+* **C**: The user enters a name in the "Edit New Document Action" screen.
+* **D**: The user selects the "Link to Filtered Context View" action type from 
+  the dropdown menu that lists all available document action types.
+* **E**: The user selects fields from the index pattern to add as filters to 
+  the document action.
+* **F**: The user saves the document action.
+* **G**: The user uses the filters and query bar to find relevant events in the 
+  Discover view.
+* **H**: The user expands a row and clicks the link corresponding to the 
+  previously created document action.
+* **I**: The context view is filtered by term filters for the fields configured
+  for the selected document action using the values from the document expanded 
+  in step H.
+
+### Workflow 3
+
+* Combination of D3, C3 and S2
+
+![workflow-3](candidate-4-workflow-3.png)
+
+* **A**: The user creates a set of term filters with arbitrary values to use as 
+  filters for the context in the Discover view.
+* **B**: The user saves the set of filters as a saved search.
+* **C**: The user uses the filters and query bar to find relevant events in the 
+  Discover view.
+* **D**: The user expands a row, opens the dropdown that lists all saved 
+  searches available for use as context filters and clicks one of them.
+* **E**: The context view is filtered by all term filters configured
+  in the selected saved search for which corresponding values exist in the 
+  document expanded in step H.
