@@ -27,7 +27,13 @@ other webapps).
 
 This section explores more detailed variations of the solution. They relate to
 different degrees of freedom of the implementation. The overall solution will
-therefore be a combination of these.
+therefore be a combination of these:
+
+* **D**efinition: the format in which the preconfigured settings are stored and 
+  the user process to change them
+* **C**ardinality: the cardinality of the relationships between the domain 
+  objects
+* **S**election: the process and timing of selecting the set of filters
 
 ### Variation D1: Filter Set Definition per Index Pattern
 
