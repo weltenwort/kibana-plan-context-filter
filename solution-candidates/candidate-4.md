@@ -141,3 +141,11 @@ therefore be a combination of these.
 
 * **PRO**: The user can easily switch perspectives after entering the context view
 * **CON**: The context view needs setup before being "useful".
+
+## Workflows
+
+### Workflow 1
+
+* Combination of D1, C2 and S2
+
+![workflow-1](candidate-4-workflow-1.png)
