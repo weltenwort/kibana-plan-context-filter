@@ -72,3 +72,27 @@ therefore be a combination of these:
 * **PRO**: The Context view requires no additional configuration for contexts 
   defined by a single field.
 * **CON**: The number of icons in each field's row might grow too unwieldy.
+
+## Workflows
+
+Workflows illustrate concrete user workflows by combining the basic solution 
+with one or more variations described above.
+
+### Workflow 1
+
+* Combination of E2 and E3
+
+![workflow-1](candidate-1-workflow-1.png)
+
+* **A**: The user uses the filters and query bar to find relevant events in the 
+  Discover view.
+* **B**: The user expands a row and clicks the link that switches to the 
+  Context view.
+* **C**: The context view is unfiltered, but contains disabled copies of the 
+  filters previously defined in the Discover view.
+* **D**: The user re-enables some of the previously defined filters to narrow 
+  down the context. The view refreshes automatically.
+* **E**: The user adds more term filters via the icons in the document details 
+  to narrow down the context. The view refreshes automatically.
+* **F**: The filter bar contains the previous filters as well as the newly 
+  added filters, which can then be manipulated as usual.
