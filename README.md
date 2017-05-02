@@ -38,8 +38,8 @@ to identify the original log entry.
 
 ## Possible Solutions
 
-* [Solution 1](./solution-candidates/candidate-1.md): Apply a subset of filter 
-  from Discover after switching
+* [Solution 1](./solution-candidates/candidate-1.md): Apply a subset of filters 
+  from Discover when switching
 * [Solution 2](./solution-candidates/candidate-2.md): Create a filter based on 
   a field selected by the user when switching
 * [Solution 3](./solution-candidates/candidate-3.md): Create a filter based on 
